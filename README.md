@@ -1,30 +1,42 @@
 # CSE1021-Python-Project
-
 # Community Shop Inventory & Alert System
 
-### Project Overview
-The **Community Shop Inventory & Alert System** is a purposeful Python application designed to solve a common problem faced by small-scale  grocery vendors in local neighborhoods. In many communities, shopkeepers rely on manual, paper-based tracking, which frequently leads to "stock-outs" of essential daily goods like milk or bread. This project provides a digital solution that allows shopkeepers to track daily sales interactively and automatically generates a "Restock Report" whenever an item's quantity falls below a critical threshold. By abstracting the programming tasks involved in inventory management , this system helps prevent revenue loss and ensures the community has consistent access to necessary supplies
+### 1. Project Overview & Significance
+The **Community Shop Inventory & Alert System** is a purposeful Python application designed to solve a common problem faced by small-scale grocery vendors. In many communities, shopkeepers rely on manual, paper-based tracking, which frequently leads to "stock-outs" of essential daily goods like milk or bread. 
 
-### Academic Context
-This project serves as a comprehensive application of the **CSE1021: Introduction to Problem Solving and Programming** utilizes fundamental algorithm design techniques to analyze and solve a real-world computing problem. The implementation demonstrates proficiency in representing compound data using Python lists and dictionaries, implementing control flow through iteration and conditional statements , and applying array techniques for data integrity—such as the removal of duplicate entries. It follows the "Top-Down Design" methodology for algorithm implementation as taught in the course's core modules.
+This project provides a digital solution that allows shopkeepers to track daily sales interactively and automatically generates a "Restock Report" whenever an item's quantity falls below a critical threshold. By digitizing this process, the system helps prevent revenue loss and ensures the community has consistent access to necessary supplies.
 
-### Key Features and Functionalities
-* **Interactive Sales Logging:** A dynamic `while` loop allows users to enter multiple sales entries in one session.
-* **Robust Data Validation:** The system uses `try-except` blocks to handle non-numeric inputs, ensuring the program does not crash during a busy shift.
-* **Case-Insensitive Input:** The program automatically standardizes item names (e.g., converting "milk" or "mILK" to "Milk"), preventing duplicate entries in the inventory dictionary.
-* **Automated Alert Logic:** Uses conditional branching (`if-elif-else`) to immediately flag items that fall below the minimum stock threshold.
-* **Comprehensive Reporting:** Generates a dual report—a specific "Restock List" for urgent orders and a "Full Inventory Status" for general oversight.
+### 2. Academic Context (CSE1021)
+This project serves as a comprehensive application of the **CSE1021: Introduction to Problem Solving and Programming** syllabus. It utilizes fundamental algorithm design techniques to solve a real-world computing problem.
+* **Control Flow:** Implements `while` loops and conditional branching (`if-elif-else`) for dynamic user interaction.
+* **Data Structures:** Uses **Python Dictionaries** for efficient inventory lookups and **Sets** for mandatory duplicate removal.
+* **Error Handling:** Employs `try-except` blocks to manage non-numeric inputs, ensuring program robustness.
+* **Logic:** Follows a "Top-Down Design" methodology, breaking the problem into Input, Processing, and Output modules.
 
-### Technical Setup and Installation
-To run this project, you must have **Python 3.x** installed on your computer. No external libraries or third-party tools are required, as the system relies entirely on standard Python modules and built-in data structures. 
+### 3. Technical Setup & Installation
+To run this project, you must have **Python 3.x** installed on your computer. The system relies entirely on standard Python modules, so no external libraries are required.
 
-1.  **Download the Code:** Download the `inventory_system.py` file from this repository and place it in a dedicated folder.
-2.  **Open Terminal:** Navigate to the folder containing the file using your command prompt or terminal.
-3.  **Execute the Program:** Type `python inventory_system.py` and press Enter. 
-4.  **Interactive Mode:** The program will start in interactive mode, providing immediate feedback for every command entered.
+1.  **Download:** Save the `inventory_system.py` file to your local machine.
+2.  **Navigate:** Open your terminal or command prompt and navigate to the folder containing the file.
+3.  **Execute:** Run the program by typing the following command:
+    ```bash
+    python inventory_system.py
+    ```
+4.  **Interface:** The program operates in an interactive command-line mode, providing immediate feedback for every entry.
 
-### How to Use the System
-Upon starting the program, you will interact with a pre-defined list of common household items such as Milk, Bread, and Rice. The system will prompt you to enter the name of an item sold; if the item is not in the system, it will alert you to try again. After entering a valid item, you will be asked for the quantity sold. You can continue logging items until the shift is over, at which point typing **"done"** will trigger the final analysis. The program then iterates through the entire inventory, identifies items that have fallen below the **Minimum Threshold of 5 units**, and displays a clear "Restock Report" alongside a full status update of all current stock levels.
+### 4. How to Use the System
+1.  **Enter Item:** When prompted, type the name of the item sold (e.g., `Milk`). The system is case-insensitive and handles extra spaces.
+2.  **Enter Quantity:** Input the number of units sold. If you enter an invalid character (like a letter), the error handling logic will prompt you to try again.
+3.  **Finalize:** Once the shift is over, type **`done`** to trigger the final analysis.
+4.  **Review:** The system will display a **Restock Report** for all items below the minimum threshold (5 units) and a full status update of your inventory.
 
-### Logic and Troubleshooting
-The system is built on a "Top-Down" architectural model. If you encounter an error where an item is not being recognized, ensure that the item exists in the initial `inventory` dictionary at the top of the script. The system includes a "Removal of Duplicates" algorithm to ensure that the final restock report is concise and accurate, even if multiple sales for the same item were recorded throughout the day.
+### 5. Program Execution & Output
+The following screenshot demonstrates a successful execution of the system, including error handling for invalid inputs and the generation of the final Restock Report.
+
+![Program Execution Results](program_execution_results.png)
+
+### 6. Key Features
+* **Case Standardization:** Automatically handles inputs like "milk" or "mILK" to match the database using `.capitalize()`.
+* **Input Validation:** Prevents crashes from non-numeric data or negative quantities using `try-except`.
+* **Real-time Logic:** Subtracts sales from current stock and flags "LOW" status immediately.
+* **Duplicate Removal:** Uses set operations to ensure the Restock Report is concise and accurate.
